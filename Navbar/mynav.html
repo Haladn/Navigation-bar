@@ -1,0 +1,47 @@
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/mynav.css' %}">
+<script src="https://kit.fontawesome.com/06211be5ed.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+
+
+
+<div class="mynav-container">
+    <div class="mynav-first">
+        <div class="my-logo"><img src="{% static 'images/logo.png' %}"><span>e-Shop</span></div>
+        <div class="mynav-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    
+
+
+    <nav class="mynav-items-left">
+        <div><a type="link" href="">Dashboard</a></div>
+        <div><a type="link" href="{% url 'shop' %}">Shop</a></div>
+        <div><a type="link" href="">About</a></div>
+    </nav>
+    <nav class="mynav-form">
+    
+        {% with filtered_items.form as form %}
+        <form class="search-form " method="GET" action="{% url 'shop' %}">
+            {% for field in form %}
+            {{field}}
+            {% endfor %}
+            <button type="submit" value="Search">Search</button>
+        </form>
+        {% endwith %}
+
+    </nav>
+    <nav class="mynav-items-right">
+        
+        <div><a class="mycart" type="link" href="">Cart <span id="cart-count">0</span></a></div>
+        <div class="mylogin"><a type="link" href="{% url 'login' %}">Login</a></div>
+
+    </nav>
+
+
+
+</div>
+        
