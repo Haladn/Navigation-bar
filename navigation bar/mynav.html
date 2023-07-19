@@ -41,7 +41,7 @@
         <div><a class="mycart" type="link" href="{% url 'cart' %}"><i class="fa-solid fa-cart-plus fa-xl" ><span id="cart-count">0</span></i></a></div>
         {% if request.user.is_authenticated or request.user.is_staff %}
         <div class="mylogin"><a type="link" href="{% url 'logout' %}">Log out</a></div>
-        <div><a class="user" type="link" href="{% url 'profile' %}"><span class="user">Hello,&nbsp;{{request.user}}</span></a></div>
+        <div><a class="user" type="link" href="{% url 'profile' %}"><span>Hello,&nbsp;{{request.user}}</span></a></div>
         {% else %}
         <div class="mylogin"><a type="link" href="{% url 'login' %}">Log in</a></div>
         {% endif %}
